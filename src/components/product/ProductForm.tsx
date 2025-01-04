@@ -182,7 +182,7 @@ return (
             <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full bg-emerald-500 text-white py-2 px-4 rounded hover:bg-blue-600 active:bg-yellow-300 transition-colors disabled:bg-blue-300"
+            className="w-full bg-emerald-500 text-white py-2 px-4 rounded hover:bg-blue-600 active:bg-yellow-300 active:text-black transition-colors disabled:bg-blue-300 duration-75"
             >
             {isSubmitting ? 'Adding...' : 'Add Product'}
             </button>

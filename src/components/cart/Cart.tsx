@@ -31,7 +31,7 @@ const Cart: React.FC<CartProps> = ({ items, onRemove, onCheckout }) => {
       </div>
       <button 
         onClick={onCheckout} 
-        className="mt-4 w-full bg-red-500 text-white py-2 rounded hover:bg-blue-600"
+        className="mt-4 w-full bg-red-500 text-white py-2 rounded hover:bg-blue-600 transition-colors active:bg-emerald-200 active:text-black disabled:bg-blue-300"
       >
         Checkout
       </button>

@@ -6,6 +6,7 @@ interface ProductProps {
     price: number;
     image: string;
     onAddToCart: () => void;
+    onDelete: () => void;
 }
 
 const Product: React.FC<ProductProps> = ({ title, description, price, image, onAddToCart }) => {
