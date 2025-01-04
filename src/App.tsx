@@ -1,18 +1,24 @@
-// src/App.tsx
+
 import React, { useState } from 'react';
 import Product from './components/product/Product';
 import Cart from './components/cart/Cart';
 import bellImage from './assets/bell.jpeg';
 import kuraImage from './assets/images.jpeg';
+import ProductForm from './components/product/ProductForm';
 
 
 const App: React.FC = () => {
   const [cart, setCart] = useState<{ title: string; price: number; quantity: number }[]>([]);
 
-  const products = [
-    { title: 'Bell Erick', description: 'Tamed Plant that Lives in the forest. Very Rare', price: 299.50, image: bellImage },
-    { title: 'Cute Fox', description: 'This fox has 9 Tails and it usually taking quiet place for nap or it will get mad ', price: 3999.00, image: kuraImage },
-  ];
+  const [products, setProducts] = useState([
+    { title: 'Bell Erick', description: 'Tamed Plant...', price: 299.50, image: bellImage },
+    { title: 'Cute Fox', description: 'This fox has 9 Tails...', price: 3999.00, image: kuraImage },
+  ]);
+
+  //nambahin data baru
+const handleAddProduct = (newProduct: { title: string; description: string; price: number; image: string }) => {
+  setProducts(prev => [...prev, newProduct]);
+};
 
   const addToCart = (title: string, price: number, image: string) => {
     setCart(prevCart => {
@@ -54,9 +60,11 @@ const App: React.FC = () => {
           />
         ))}
       </div >
-      <div className="mt-4 p-4 bg-teal-800 text-white rounded-lg shadow-lg"> {/* Dark teal cart */}
+      <div className="mt-4 p-4 bg-teal-800 text-white rounded-lg shadow-lg"> 
         <Cart items={cart} onRemove={removeFromCart} onCheckout={handleCheckout} />
-
+      </div>
+      <div className="mt-4">
+      <ProductForm onSubmit={handleAddProduct} />
       </div>
     </div>
   );
