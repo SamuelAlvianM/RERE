@@ -34,7 +34,7 @@ const Login: React.FC = () => {
     return (
         <div className="flex justify-center items-center min-h-screen bg-emerald-100">
             <div className="bg-yellow-200 p-8 rounded-lg shadow-2xl max-w-sm w-full">
-                <h1 className="text-2xl font-semibold text-center mb-6">Login yu</h1>
+                <h1 className="text-2xl font-semibold text-center mb-6">Login yu!</h1>
 
                 {error && <p className="text-red-500 text-md text-center mb-4 border-emerald-200">{error}</p>}
 
