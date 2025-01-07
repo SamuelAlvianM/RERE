@@ -5,7 +5,7 @@ export interface ProductProps {
     description: string;
     price: number;
     image: string;
-    onAddToCart: () => void;
+    onAddToCart: (title: string, price: number, image: string) => void;
 }
 
 export interface ProductFormValues {
