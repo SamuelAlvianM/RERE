@@ -9,6 +9,9 @@ interface Props {
     products: ProductProps[];
     onAddToCart: (title: string, price: number, image: string) => void;
 }
+interface CartProps{
+    
+}
 
 const Product: React.FC<Props> = ({ products, onAddToCart }) => {
     const { logout } = useAuth();
@@ -61,7 +64,7 @@ const Product: React.FC<Props> = ({ products, onAddToCart }) => {
                 </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                {products.map((product, index) => (
+                {products.map((product, index, ) => (
                     <div
                         key={index}
                         className="bg-yellow-200 border border-blue-400 rounded-lg shadow-xl p-4 hover:shadow-lg transition duration-300 ease-in-out"
