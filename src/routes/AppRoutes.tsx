@@ -7,6 +7,7 @@ import bellImage from '../assets/bell.jpeg';
 import kuraImage from '../assets/images.jpeg';
 import pikaImage from '../assets/pikachu.jpeg';
 import Register from "../components/auth/register";
+import GamesPage from "../pages/GamePage";
 
 const AppRoutes: React.FC = () => {
 
@@ -104,6 +105,9 @@ const AppRoutes: React.FC = () => {
                         </PrivateRoute>
                     }
                 />
+
+                <Route path="/games" element={<GamesPage />} />
+
             </Routes>
         </Router>
     );

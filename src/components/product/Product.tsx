@@ -9,9 +9,7 @@ interface Props {
     products: ProductProps[];
     onAddToCart: (title: string, price: number, image: string) => void;
 }
-interface CartProps{
-    
-}
+
 
 const Product: React.FC<Props> = ({ products, onAddToCart }) => {
     const { logout } = useAuth();
@@ -27,6 +25,10 @@ const Product: React.FC<Props> = ({ products, onAddToCart }) => {
         navigate("/add-product");
     };
 
+    const handleNavigateToGame = () => {
+        navigate("/games");
+    };
+
     const handleAddToCart = (title: string, price: number, image: string) => {
         // Add product to cart
         onAddToCart(title, price, image);
@@ -39,28 +41,35 @@ const Product: React.FC<Props> = ({ products, onAddToCart }) => {
     };
 
     return (
-        <div className="bg-emerald-100 min-h-screen p-6">
+        <div className="bg-emerald-200 min-h-screen p-6">
             <h1 className="text-3xl font-bold text-center text-gray-800 mb-6">Products</h1>
             <p className="text-lg text-center text-gray-600 mb-4">Total Products: {productCount}</p>
             <div className="flex justify-evenly  mb-6">
                 <button
                     onClick={handleNavigate}
-                    className="px-6 py-3 bg-violet-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                    className="px-6 py-3 bg-amber-500 border-2 text-white font-bold rounded-full hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all duration-300 hover:ring-8 hover:ring-violet-300"
                 >
                     Go to Cart
                 </button>
                 <button
                     onClick={handleNavigateToCreate}
-                    className="px-6 py-3 bg-violet-500 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                    className="px-6 py-3 bg-lime-500 border-2 text-white font-bold rounded-full hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all duration-300 hover:ring-8 hover:ring-violet-300"
                 >
                     Req Product
                 </button>
 
                 <button 
                     onClick={() => logout()} 
-                    className="px-6 py-3 bg-violet-800 text-white rounded-md hover:bg-yellow-600 focus:outline-none focus:ring-2 focus:ring-stone-500"
+                    className="px-6 py-3 bg-rose-500 border-2 text-white font-bold rounded-full hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all duration-300 hover:ring-8 hover:ring-violet-300"
                 >
                     Logout
+                </button>
+
+                <button 
+                    onClick={() => handleNavigateToGame()} 
+                    className="px-6 py-3 bg-indigo-500 border-2 text-white font-bold rounded-full hover:bg-fuchsia-500 focus:outline-none focus:ring-2 focus:ring-stone-500 transition-all duration-300 hover:ring-8 hover:ring-violet-300"
+                >
+                    GAMES
                 </button>
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

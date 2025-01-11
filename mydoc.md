@@ -170,3 +170,19 @@ const InputComponent: React.FC = () => {
 
 export default InputComponent;
 ```
+
+
+## CRUD
+
+1. C = CREATE
+2. R = READ 
+3. U = UPDATE
+4. D = DELETE
+
+### AUTHORIZATION 
+
+ROLE USER = CUMA BISA <u>READ</u>
+
+ADMIN = DIA BISA FULL <u>CRUD</u>
+
+
