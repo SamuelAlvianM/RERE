@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'https://www.freetogame.com/api';
+const API_BASE_URL = 'https://api.escuelajs.co/api/v1/products';
 const CORS_PROXY_URL = 'https://api.allorigins.win/raw?url='; // cuma, best practicenya pakai .env. KENAPA?
 
 export const fetchGames = async () => {

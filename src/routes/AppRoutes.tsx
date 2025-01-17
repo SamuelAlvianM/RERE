@@ -8,6 +8,7 @@ import kuraImage from '../assets/images.jpeg';
 import pikaImage from '../assets/pikachu.jpeg';
 import Register from "../components/auth/register";
 import GamesPage from "../pages/GamePage";
+import BelajarPage from "../pages/BelajarPage";
 
 const AppRoutes: React.FC = () => {
 
@@ -107,7 +108,7 @@ const AppRoutes: React.FC = () => {
                 />
 
                 <Route path="/games" element={<GamesPage />} />
-
+                <Route path="/belajar" element={<BelajarPage />} />
             </Routes>
         </Router>
     );

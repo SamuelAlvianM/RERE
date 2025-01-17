@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
 const Login: React.FC = () => {
-    const { login } = useAuth()
+    const { login } = useAuth();
     const navigate = useNavigate();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -17,7 +17,7 @@ const Login: React.FC = () => {
             return;
         }
 
-        const { username: storedUsername, password: storedPassword } = JSON.parse(storedUserData);
+        const { username: storedUsername, password: storedPassword, } = JSON.parse(storedUserData);
         if (username === storedUsername && password === storedPassword) {
             setError("");
             login();
